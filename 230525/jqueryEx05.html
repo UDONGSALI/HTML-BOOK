@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <style>
+        #box {
+            width: 520px;
+            height: 500px;
+            border: 1px solid #999;
+            background: #ccc;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .item {
+            width: 60px;
+            height: 10px;
+            float: left;
+            position: absolute;
+        }
+
+        .it1 {
+            background: red;
+            left: 20px;
+            bottom: 0;
+        }
+
+        .it2 {
+            background: orange;
+            left: 90px;
+            bottom: 0;
+        }
+
+        .it3 {
+            background: yellow;
+            left: 160px;
+            bottom: 0;
+        }
+
+        .it4 {
+            background: green;
+            left: 230px;
+            bottom: 0;
+        }
+
+        .it5 {
+            background: blue;
+            left: 300px;
+            bottom: 0;
+        }
+
+        .it6 {
+            background: darkblue;
+            left: 370px;
+            bottom: 0;
+        }
+
+        .it7 {
+            background: magenta;
+            left: 440px;
+            bottom: 0;
+        }
+
+        #control {
+            width: 520;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        #control>button {
+            width: 100px;
+            height: 30px;
+        }
+
+    </style>
+    <script>
+        
+        var h = 400;
+
+        function move() {
+            for (var i = 1; i <= 7; i++) {
+                var x = Math.floor(Math.random()*490);
+                
+                
+                $('.it' + i).css({
+                    height: x + "px"
+                });
+            }
+        }
+
+        $(function() {
+
+            var interval = setInterval("move()", h);
+
+            $('.vslow').click(function() {
+                h = 1000;
+                clearInterval(interval);
+                interval = setInterval("move()", h)
+            });
+            $('.slow').click(function() {
+                h = 600;
+                clearInterval(interval);
+                interval = setInterval("move()", h)
+            });
+            $('.fast').click(function() {
+                h = 200;
+                clearInterval(interval);
+                interval = setInterval("move()", h)
+            });
+            $('.vfast').click(function() {
+                h = 50;
+                clearInterval(interval);
+                interval = setInterval("move()", h)
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+    <div id="box">
+        <div class="item it1"></div>
+        <div class="item it2"></div>
+        <div class="item it3"></div>
+        <div class="item it4"></div>
+        <div class="item it5"></div>
+        <div class="item it6"></div>
+        <div class="item it7"></div>
+    </div>
+    <div id="control">
+        <button class="vslow">매우 천천히</button>
+        <button class="slow">천천히</button>
+        <button class="fast">빠르게</button>
+        <button class="vfast">매우 빠르게</button>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,5 @@
+
+   <div id="content">
+       <h1>sub page1 입니다.</h1>
+       <img src="imgs/w1.jpg">
+   </div>

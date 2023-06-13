@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>parameter</title>
+    <script>
+        function compute(){
+            var num1 = Number(document.getElementById("num1").value);
+            var num2 = Number(document.getElementById("num2").value);
+            var opr = document.getElementById("opr").value;
+
+            var re;
+            switch (opr) {
+                case "+":
+                    re = num1 + num2;
+                    break;
+                case "-":
+                    re = num1 - num2;
+                    break;
+                case "*":
+                    re = num1 * num2;
+                    break;
+                case "/":
+                    re = num1 / num2;
+                    break;
+            }
+            document.getElementById("result").value = re;
+
+        }
+
+    </script>
+</head>
+
+
+<body>
+    <input type="text" id="num1" size="5">
+    <input type="text" id="opr" size="1">
+    <input type="text" id="num2" size="5">
+    <input type="button" onclick="compute()" value="=">
+    <input type="text" id="result" size="5">
+
+
+</body>
+
+</html>

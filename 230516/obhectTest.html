@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        class info {
+            construcktor(no, name, kor, eng, mat) {
+                this.no = no;
+                this.name = name;
+                this.kor = kor;
+                this.eng = eng;
+                this.mat = mat;
+            }
+            tot() {
+                return this.kor + this.eng + this.mat;
+            }
+            avg() {
+                return (this.kor + this.eng + this.mat) / 3;
+            }
+
+
+            var a = new info(1, '홍길동', 80, 90, 85);
+
+            for (var st in a) {
+                console.log(typeof(st));
+                if (typeof(a[st]) == 'function') {
+                    document.write(a.a[st], "<br>");
+                } else {
+                    document.write(st, " : ", a[st], "<br>");
+                }
+
+            }
+
+            var b = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+            for (var i = 0; i < b.length; i++) {
+                console.log(b[i]);
+            }
+            for (var k in b) {
+                console.log(k);
+            }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

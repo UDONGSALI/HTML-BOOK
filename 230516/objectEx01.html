@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        var st = {
+            name: '홍길동',
+            age: 30,
+            addr: '대전 서구 둔산서로 17',
+            prtout: function() {
+                return st.name + "은" + st.addr + "에서 살고있고, 나이는" + st.age + "입니다.";
+            }
+        }
+        console.log(st.name);
+        console.log(st.addr);
+        console.log(st.prtout());
+
+
+        function stu(name, age, addr) {
+            this.name = name;
+            this.age = age;
+            this.addr = addr;
+            this.prtout = function() {
+                return this.name + "은" + this.addr + "에서 살고있고, 나이는" + this.age + "입니다.";
+            }
+
+        }
+        
+        var st1 = new stu('개똥이',25, '대전 동구 자양동');
+        console.log(st1.name);
+        console.log(st1.prtout());
+        st.tel = "010-1234-1234";
+        console.log(st.tel);
+//        delete st.age;
+        console.log(st.age);
+        
+        stu.prototype.info = function(){
+            return this.name + "는" + this.addr ;
+        }
+        
+        console.log(st1.info());
+        
+        for(var i in st){
+            console.log(i,":", st[i]);
+        }
+
+    </script>
+</head>
+
+<body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

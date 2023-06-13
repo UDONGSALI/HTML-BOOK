@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>String</title>
+    <script>
+    var str1 = new String("자바스크립트 스크립트언어");
+    var str2 = "자바스크립트";
+        
+    console.log(str1.length);
+    console.log(str1.charAt(0));
+    console.log(str1.indexOf("스"));
+    console.log(str1.includes("스x"));
+    console.log(str1.indexOf("스",3));
+    console.log(str1.lastIndexOf("스"));
+    console.log(str1.substring(1,4));
+    console.log(str1.substr(1,4));
+    console.log(str1.substr(-3));
+    console.log(str2.split(", "));
+    console.log(str1.replace("자바", "JAVA"));
+        
+    console.log(str1.concat(str2));
+        
+        var str3 = "   Hello        Javascript    "
+        console.log(str3);
+        console.log(str3.trim());
+        
+        var no ="960412-1456210";
+        
+        console.log(no);
+        console.log(no.replace(no.substring(8),"******"));
+        
+        var name = "홍길동";
+        console.log(name);
+        console.log(name.replace(name.charAt(1),"*"));
+        
+        var prodCode = "삼성-TV-80-QLED";
+        
+        console.log(prodCode.split("-")[2]);
+        
+        var code = prodCode.split("-");
+        
+        
+        console.log(code);
+        
+        console.log(code.join("/"));
+        
+        var tel = ['010','1234','5678'];
+        console.log(tel.join(""));
+        
+        var word ="computer";
+        
+        var wordChar = word.split("");// 문자열을 한문자씩 배열로 
+        wordChar = [...word];
+        wordChar = Array.from(word);
+        console.log(wordChar);
+        
+        
+        for(var i = 0; i < 10; i++){
+        temp = wordChar[0];
+        var r = Math.floor(Math.random()*word.length);
+        wordChar[0] = wordChar[r];
+        wordChar[r] = temp;
+        
+        console.log(wordChar.join(""));
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    </script>
+</head>
+<body>
+   
+    
+</body>
+</html>

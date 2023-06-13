@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #wrap {
+            display: grid;
+            grid-template-rows: 100px 400px 100px ;
+            background:
+        }
+
+        #wrap div {
+            border: 1px solid red;
+            margin: 5px;
+        }
+        #grid2 {
+            display: grid;
+            grid-template-columns: 27% 46% 27%;
+        }
+        #sub2 {
+            display: grid;
+           grid-template-rows: 50% 50%;
+        }
+        #ssub4 {
+            display: grid;
+           grid-template-columns: 33% 34% 33%;
+        }
+        #sub3 {
+            display: grid;
+           grid-template-rows: 50% 50%;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="grid1">grid1</div>
+        <div id="grid2">
+            <div class="sub1">sub1</div>
+            <div id="sub2">
+                <div class="sub3">sub3</div>
+                <div id="ssub4">
+                 <div class="ssub3"></div>
+                 <div class="ssub3"></div>
+                 <div class="ssub3"></div>
+                </div>
+            </div>
+            <div id="sub3">
+            <div class="ssub3"></div>
+            <div class="ssub3"></div>
+            </div>
+        </div>
+        <div class="grid9">grid9</div>
+    </div>
+</body>
+
+</html>

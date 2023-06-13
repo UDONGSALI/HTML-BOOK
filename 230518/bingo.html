@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bingo</title>
+    <script>
+        var bingGoTable = [
+            [0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0],
+            [0, 0, 0, 0, 0]
+        ]; //5*5의 이중 배열을 생성 값은 전부 0
+
+        function createBG() {
+            for (var i = 0; i < 5; i++) {
+                for (var j = 0; j < 5; j++) {
+                    bingGoTable[i][j] = (j + 1) + (i * 5); //i의 0번째 배열에는 1~5가 입력되고 1번째배열에는 6~10값이 입력됨
+                }
+            }
+        }
+
+        function suffle() {
+            var temp;
+            for (var i = 0; i < 50; i++) { // 50번 반복
+                var x = Math.floor(Math.random() * 5); //1~5까지의 랜덤 값을 생성
+                var y = Math.floor(Math.random() * 5); //1~5까지의 랜덤 값을 생성
+
+                temp = bingGoTable[0][0]; // 첫번째 자리의 값을 템프 변수에 저장
+                bingGoTable[0][0] = bingGoTable[x][y]; // 00 배열에는 랜덤 함수를 집어넣음
+                bingGoTable[x][y] = temp; //나온 자리에는 00의 값을 넣음 1~25 자리를 유지하기 위함 00이 다른곳으로 가는 행위를 반복하여 섞음
+            }
+        }
+
+        function disp() { //표시
+            var html = "<table border='1' width='150'>";
+            for (var i = 0; i < 5; i++) {
+                html += "<tr>"; // tr 하나가 한 줄
+                for (var j = 0; j < 5; j++) {
+                    html += "<td style='text-align : center'>";
+                    html += bingGoTable[i][j];
+                    html += "</td>"; // td 하나가 한 칸을 만들면서 값을 떼려넣음
+                }
+                html += "</tr>"; // tr이 끝나면서 한 줄이 끝남
+            }
+            html += "</table>"; // 다섯줄을 만들면서 끝남
+            document.getElementById("box").innerHTML = html; // 그걸 html에 집에넣음
+        }
+
+        function bingGoTest() {
+            var re = false;
+            for (var i = 0; i < 5; i++) {
+                var cnt = 0;
+                for (var j = 0; j < 5; j++) {
+                    if (bingGoTable[i][j] == 'X') {
+                        cnt++;
+                    }
+                }
+                if (cnt == 5) {
+                    return true;
+                }
+            }
+
+            var cnt = 0;
+            for (var i = 0; i < 5; i++) {
+                var cnt = 0;
+                for (var j = 0; j < 5; j++) {
+                    if (bingGoTable[j][i] == 'X') {
+                        cnt++;
+                    }
+                }
+                if (cnt == 5) {
+                    return true;
+                }
+            }
+
+
+            var cnt = 0;
+            for (var i = 0; i < 5; i++) {
+                if (bingGoTable[i][i] == 'X') {
+                    cnt++;
+                }
+                if (cnt == 5) {
+                    return true;
+                }
+            }
+
+            var cnt = 0;
+            for (var i = 0; i < 5; i++) {
+                if (bingGoTable[i][4 - i] == 'X') {
+                    cnt++;
+                    console.log(cnt);
+                }
+                if (cnt == 5) {
+                    return true;
+                }
+            }
+
+
+        }
+
+
+        function bingChk() {
+            var inputData = document.getElementById("inputData").value; // 입력 데이터
+            inputData = Number(inputData);
+            for (var i = 0; i < 5; i++) {
+                for (var j = 0; j < 5; j++) {
+                    if (inputData == bingGoTable[i][j]) { // 입력값과 같은 칸에
+                        bingGoTable[i][j] = 'X'; // X를 입력
+                    }
+                }
+            }
+            disp();
+            document.getElementById("inputData").value = ""; // X 표시 한것을 업뎃(전체)
+
+            var re = bingGoTest();
+            if (re) {
+                alert("BingGo!!!!")
+                createBG();
+                suffle();
+                disp();
+            }
+
+
+            bingGoTest();
+        }
+
+        window.onload = function() {
+            createBG();
+            suffle();
+            disp();
+        }
+
+    </script>
+    <style>
+
+    </style>
+
+
+
+</head>
+
+<body>
+
+    <input type="text" id="inputData">
+
+    <button onclick="bingChk();">확인</button>
+    <div id="box">
+    </div>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

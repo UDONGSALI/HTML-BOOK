@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        function add(x, y) {
+            var x  = document.getElementById("num1").value;
+            var y  = document.getElementById("num2").value;
+            var compute = Number(x)+Number(y);
+            var result = document.getElementById("result");
+            result.value = compute;
+        }
+        var aaa = (function(){
+            document.write("Hello!!! <br>");
+        })();
+//        aaa();
+
+    </script>
+
+</head>
+
+<body>
+    <input type = "text" id ="num1">
+    <span> + </span>
+    <input type = "text" id ="num2">
+    <button onclick="add();">계산</button>
+    <input type = "text" id ="result">
+
+</body>
+
+</html>

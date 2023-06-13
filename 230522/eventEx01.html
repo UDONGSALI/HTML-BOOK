@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Event</title>
+    <script>
+        function disp() {
+            alert("Click!!!");
+        }
+        window.onload = function() {
+            var btn1 = document.getElementById("btn1");
+//            btn1.onclick = function() {
+//                alert("click")
+//            }
+//            btn1.onclick = disp;
+            btn1.addEventListener("click", disp)
+        }
+
+    </script>
+</head>
+
+<body>
+    <button id="btn" onclick="disp();">클릭</button>
+    <button id="btn1">클릭</button>
+
+</body>
+
+</html>

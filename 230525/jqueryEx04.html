@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script>
+        $(function(){
+            console.log($('#html').attr('checked'));
+            console.log($('#html').prop('checked'));
+            console.log($('input:checkbox').eq(1).prop('checked'));
+        
+            var sw =1;
+            var interval = setInterval(function(){
+                if(sw != 1){
+                    $('.tit').css({color: "red"});
+                }else{
+                    $('.tit').css({color: "blue"});
+                }
+                sw *= -1;
+            },100);
+            
+        });
+    </script>
+    <style>
+    
+    
+    </style>
+</head>
+<body>
+   <input type="checkbox" id="html" checked = "checked"><label for="html">html</label>
+   <input type="checkbox" id="css" checked = "checked"><label for="css">css</label>
+   
+   <h1 class="tit">안녕</h1>
+    
+</body>
+</html>

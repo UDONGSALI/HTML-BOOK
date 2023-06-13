@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script>
+        $(function(){
+            var w = $('#box').width();
+            var h = $('#box').height();
+            $('#box').css({overflow: "hidden"});
+            $('#box').css({width: 0, height: 0});
+            
+            $('#btn').click(function(){
+                var wPos = 0;
+                var hPos = 0;
+                var wDiff = w / 100;
+                var hDiff = h / 100;
+                var interval = setInterval(function(){
+                    wPos += wDiff;
+                    hPos += hDiff;
+                    $('#box').css({width: wPos + "px", height: hPos + "px"});
+                    if(wPos >= w){
+                        clearInterval(interval);
+                    }
+                },10);
+            });
+        });
+    </script>
+</head>
+<body>
+   <div id="box">
+       <div id="content">
+           <img src="imgs/w1.jpg">
+           
+       </div>
+   </div>
+   <button id="btn">보이기</button>
+    
+</body>
+</html>

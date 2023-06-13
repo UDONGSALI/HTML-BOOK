@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>RegExp</title>
+    <script>
+//        var reg = /javascript/;
+////        var reg1 = new RegExp('javascript');
+////        
+////        var str1 = "hello javascript";
+////        
+////        console.log(reg.test(str1));
+////        console.log(str1.match(reg));
+//        
+//        var reg = /(abc)/; 
+//        
+//        console.log(regs.test('dfabscd'));
+        
+         var hpreg = /^\d{10,11}$/;
+        var hp1 = '01012345600';
+        console.log(hpreg.test(hp1));
+        
+        var emailreg = /^[A-Za-z0-9!#$^&*_-]+@[A-Za-z0-9_-]+(\.[A-Za-z0-9_-]+){1,2}$/;
+        
+        console.log(emailreg.test('*abcabcde@com.kr.da'));
+        
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

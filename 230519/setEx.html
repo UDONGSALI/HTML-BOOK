@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Set()</title>
+    <script>
+        var listSet = new Set();
+        listSet.add('홍길동');
+        listSet.add('개똥이');
+        listSet.add('이쁜이');
+        listSet.add('홍길동');
+        listSet.add('망아지');
+
+        console.log(listSet.size);
+
+        for (var s of listSet) {
+            console.log(s);
+        }
+        console.log(listSet.has('이쁜이'));
+        listSet.delete('개똥이');
+        for (var s of listSet) {
+            console.log(s);
+        }
+        for (var i = 0; i < 5; i++) {
+            var rotto = new Set();
+            while (rotto.size < 6) {
+                var r = Math.floor(Math.random() * 45) + 1
+                rotto.add(r);
+            }
+            for (var ro of rotto) {
+                document.write(ro, " ");
+            }
+             document.write("<br>");
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

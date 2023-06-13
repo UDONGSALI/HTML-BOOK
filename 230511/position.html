@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #top{
+            width: 100%;
+            height: 100px;
+            background: blue;
+            position: fixed;
+            z-index: 10;
+        }
+        #wrap{
+            width: 80%;
+            height: 2000px;
+            background: #ccc;
+            margin: 0 auto;
+            z-index: 9;
+            position: relative;
+            top: 100px;
+        }
+        #img{
+            position: relative;
+        }
+        #img img{
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 10;
+        }
+        #img h2{
+            position: absolute;
+            left: 200px;
+            top: 0;
+/*            bottom: 10px;*/
+            z-index: 111;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="top">
+
+    </div>
+    <div id="wrap">
+        <div id="img">
+            <img src="imgs/song03.jpg">
+            <h2>송혜교</h2>            
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body></html>      

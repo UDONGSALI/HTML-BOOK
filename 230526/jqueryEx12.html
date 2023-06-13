@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script>
+        $(function(){
+           $('#login').submit(function(){
+              var id = $('#id').val();
+              var pw = $('#pw').val();
+               
+               if(id.length == 0){
+                   $('#idDisp').val("아이디를 입력 하세요!!");
+                   
+                   $('#id').focus()
+                   return false;
+               }
+               if(id.length < 8 || id.length > 13){
+                    $('#idDisp').val("아이디는 8 ~ 13자 사이로 만들어 주세요");
+                   return false;
+               }
+               if(pw.length == 0){
+                   alert("비밀번호를 입력 하세요!!");
+                   return false;
+               }
+               if(pw.length < 8 || pw.length > 13){
+                   alert("비밀번호는 8 ~ 13자 사이로 만들어 주세요");
+                   return false;
+               }
+               return true;
+           });
+            $('#id').click(function(){
+                $('#idDisp').val(""):
+            });
+        });
+    </script>
+    <style>
+        #idDisp{
+            border: none;
+            color: red;
+            font-size: 12px;
+        }
+    
+    </style>
+</head>
+<body>
+   <form action="#" method="get" name="login" id="login">
+       <table>
+           <tr>
+               <td><label for="id">아이디</label></td>
+               <td><input type="text" id="id" name="id"></td>
+           </tr>
+                <td></td>
+               <td><input type="text" id="idDisp"></td>
+           <tr>
+               <td><label for="pw">비밀번호</label></td>
+               <td><input type="password" id="pw" name="pw"></td>
+           </tr>
+           <tr>
+               <td colspan="2">
+                <input type="submit" value = "확인">
+                <input type="reset" value = "취소">
+               </td>
+           </tr>
+       </table>
+   </form>
+    
+</body>
+</html>

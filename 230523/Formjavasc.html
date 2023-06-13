@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        window.onload = function() {
+            var frm = document.frm;
+        }
+
+        function chk() {
+            var id = frm.id.value;
+            var pw = frm.pw.value;
+            var se = frm.se.value;
+            var ck = frm.ck1.checked;
+            
+            frm.elements['ck1'].onblur = function(){
+                
+                if(ck){
+                    frm.ck1hed.value = "증권"
+                }else{
+                    frm.ck1hed.value = ""
+                }
+            }
+            var gen1 = frm.gen1.checked;
+            var gen2 = frm.gen2.checked;
+
+            if (gen1) {
+                frm.gen.value = "남";
+            } else {
+                frm.gen.value = "여";
+
+            }
+
+            alert(id + pw + se + ck + gen);
+            return false;
+        }
+
+    </script>
+    <style>
+        form  #ck1hed{
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="#" method="get" id="frm" name="frm">
+        <table>
+            <tr>
+                <td>아이디</td>
+                <td><input type="text" id="id" name="id"></td>
+            </tr>
+            <tr>
+                <td>비밀번호</td>
+                <td><input type="password" id="pw" name="pw"></td>
+            </tr>
+            <tr>
+                <td>지역</td>
+                <td><select id="se" name="se">
+                        <option>서울</option>
+                        <option>부산</option>
+                        <option>대전</option>
+                        <option>대구</option>
+                        <option>광주</option>
+                    </select></td>
+            </tr>
+            <tr>
+                <td>관심사항</td>
+                <td>
+                    <input type="checkbox" id="ck1" name="ck1">증권
+                    <input type="checkbox" id="ck2" name="ck2">여행
+                    <input type="text" id="ck1hed" name="ck1hed">
+                </td>
+            </tr>
+            <tr>
+                <td>성별</td>
+                <td>
+                    <input type="radio" id="gen1" name="gen">남
+                    <input type="radio" id="gen2" name="gen">여
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button onclick="chk();">확인</button>
+                </td>
+            </tr>
+
+        </table>
+    </form>
+</body>
+
+</html>

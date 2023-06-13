@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #999;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        li {
+            list-style: none;
+            float: left;
+            margin: 25px;
+        }
+
+        .cont {
+            width: 1000px;
+            height: 250px;
+        }
+
+        .cont>li,
+        .cont>li>img {
+            width: 150px;
+            height: 150px;
+        }
+
+        #move {
+            width: 200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        #prev {
+            position: absolute;
+            left: 5px;
+            top: 100px;
+            cursor: pointer;
+
+        }
+
+        #next {
+            position: absolute;
+            right: 5px;
+            top: 100px;
+            cursor: pointer;
+        }
+
+    </style>
+    <script>
+        $(function() {
+            $('#next').click(function() {
+                var ele = $(".cont li:first-child");
+                $('.cont').append(ele);
+                //                $('#box').after("<div><p>이동했습니다.</p></div>")
+            });
+
+            $('#prev').click(function() {
+                var ele = $(".cont li:last-child");
+                $('.cont').prepend(ele);
+            });
+            $('img').hover(function() {
+                $(this).css({width:"155px", height: "155px", left: "-5px" , top: "-5px"})
+            }, function() {
+                 $(this).css({width:"150px", height: "150px"})
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+    <div id="box">
+        <ul class="cont">
+            <li class="item">
+                <img src="imgs/bs1.png">
+            </li>
+            <li class="item">
+                <img src="imgs/bs2.png">
+            </li>
+            <li class="item">
+                <img src="imgs/bs3.png">
+            </li>
+            <li class="item">
+                <img src="imgs/bs4.png">
+            </li>
+            <li class="item">
+                <img src="imgs/bs5.png">
+            </li>
+        </ul>
+        <div id="prev">◀</div>
+        <div id="next">▶</div>
+    </div>
+    <div id="move">
+        <!--
+        <button id="append">append()</button>
+        <button id="prepend">prepend()</button>
+-->
+    </div>
+
+</body>
+
+</html>

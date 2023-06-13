@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>date</title>
+    <script>
+        //        var date1 = new Date();
+        //        var date2 = new Date(2023, 5, 19);
+        //        var date3 = new Date('2023/05/19');
+        //        var date4 = new Date(2023, 5, 19, 13, 51, 30);
+        //        
+        //        console.log(date1.getYear()+1900);
+        //        console.log(date2.getMonth()+1900);
+        //        console.log(date3.getYear()+1900);
+        //        console.log(date4.getYear()+1900);
+        //        
+        //        console.log(date1.toString());
+        //        console.log(date1.toLocalelString());
+
+        var today = new Date();
+        var birth = new Date(1998, 10, 3);
+
+
+        var days = Math.round((today - birth) / 24 / 60 / 60 / 1000);
+
+        var ph = days % 23;
+        var im = days % 28;
+        var em = days % 33;
+        
+        var phD = 360 / 23 * ph;
+        var imD = 360 / 28 * im;
+        var emD = 360 / 33 * em;
+        
+        console.log("신체 리듬 : ", Math.sin(phD));
+        console.log("지성 리듬 : " , Math.sin(imD));
+        console.log("감성 리듬 : " , Math.sin(emD));
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

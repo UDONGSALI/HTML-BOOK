@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: red;
+            font-size: 40px;
+        }
+        #txt {
+            color: aquamarine;
+            font-size: 20px;
+        }
+        p {
+            color: blue;
+            font-size: 12px;
+        }
+        .cls1{
+            color: orange;
+            font-size: 16px;
+        }
+        #box > ul > li{
+            color: blue;
+        }
+        #box > ul > li > ul > li{
+            color: red;
+        }
+        .tit{
+            color: orange;
+        }
+        #txt ~ p{
+            background: yellow;
+        }
+        h1, p {
+            border: 1px solid red;
+        }
+        
+
+    </style>
+</head>
+
+<body>
+    <h1>제목</h1>
+    <p>스타일 지정</p>
+    <p id="txt">아이디 선택자</p>
+    <p class="cls1">클래스 선택자</p>
+    <h1 class="tit">하위 선택자</h1>
+    <div id="box">
+        <ul class="sub">
+            <li>첫번째</li>
+            <li>두번째
+                <ul class="depth">
+                    <li>서브 첫번째</li>
+                    <li>서브 두번째</li>
+                </ul>
+            </li>
+            <li>세번째</li>
+        </ul>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</body>
+
+</html>

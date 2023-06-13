@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            margin: 50px;
+        }
+        #wrap{
+            width: 80%;
+            margin: 0 auto;
+        }
+        .navi{
+            width: 100px;
+            height: 100px;
+            position: relative;
+            border: 1px solid #999;
+            overflow: hidden;
+        }
+        .navi > .back, .navi > .front{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        
+        .navi img{
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script>
+        $(function(){
+            $(".navi").hover(function(){
+                $(this).children('.front').css({left:'-100px',
+                                               top:'-100px'});
+//               $(this).children('.front').stop()
+//                   .animate({left:'-100px', top:'-100px'},300); 
+            }, function(){
+                $(this).children('.front').css({left:'0px',
+                                               top:'0px'});
+//                $(this).children('.front').stop()
+//                    .animate({left:'0px', top:'0px'},300); 
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+       <div class="navi">
+           <div class="back">
+               <img src="imgs/h1.png">
+           </div>
+           <div class="front">
+               <img src="imgs/w1.jpg">
+           </div>
+       </div>
+       <div class="navi">
+           <div class="back">
+               <img src="imgs/h2.png">
+           </div>
+           <div class="front">
+               <img src="imgs/w2.jpg">
+           </div>
+       </div>
+       <div class="navi">
+           <div class="back">
+               <img src="imgs/h3.png">
+           </div>
+           <div class="front">
+               <img src="imgs/w3.jpg">
+           </div>
+       </div>
+       <div class="navi">
+           <div class="back">
+               <img src="imgs/h4.png">
+           </div>
+           <div class="front">
+               <img src="imgs/w4.jpg">
+           </div>
+       </div>
+       <div class="navi">
+           <div class="back">
+               <img src="imgs/h5.png">
+           </div>
+           <div class="front">
+               <img src="imgs/w5.jpg">
+           </div>
+       </div>
+    </div>
+</body>
+</html>

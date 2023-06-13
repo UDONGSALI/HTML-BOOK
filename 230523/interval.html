@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #wrap {
+            width: 520px;
+            height: 200px;
+            border-top: 1px solid #666;
+            border-bottom: 1px solid #666;
+            margin: 0 auto;
+        }
+
+        #viwer {
+            width: 530px;
+            height: 100px;
+            position: relative;
+            overflow: hidden;
+            margin-top: 50px;
+
+        }
+
+        #viewer>ul {
+            width: 1100px;
+            height: 100px;
+            position: absolute;
+            left: 0;
+        }
+
+        #viewer>ul>li {
+            list-style: none;
+            width: 96px;
+            height: 96x;
+            float: left;
+            margin: 2px;
+            border-right: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        #viewer>ul>li>a>img {
+            width: 96px;
+            height: 96px;
+
+        }
+        #banner{
+            width: 500px;
+            height: 0px;
+            margin: 0 auto;
+        }
+        #banner> img{
+            width: 500px;
+            height: 0;
+        }
+
+    </style>
+    <script>
+        var flag = 1;
+        window.onload = function() {
+            var imgs = document.getElementById("imgs");
+            var xpos = 0;
+            var interval
+            var banner = document.getElementById("banner");
+            var img = banner.getElementsByTagName("img");
+
+            move();
+            setTimeout(function(){
+                banner.style.height = "500px";
+                img[0].style.height = "500px";
+            },5000);
+            function move() {
+                 interval = setInterval(function() {
+                    if (xpos <= -80) {
+                        flag = 0;
+                    }
+                    if (xpos >= 700) {
+                        flag = 1;
+                    }
+                    if (flag == 1) {
+                        xpos -= 3;
+                        imgs.style.left = xpos + "px"
+                    } else {
+                        xpos += 3;
+                        imgs.style.left = xpos + "px"
+                    }
+                }, 50);
+            }
+
+            imgs.onmouseover = function() {
+                clearInterval(interval);
+
+            }
+            imgs.onmouseout = function() {
+                            move();
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="viewer">
+            <ul id="imgs">
+                <li><a href="https://www.hanwhaeagles.co.kr/index.do">
+                        <img src="imgs/bs1.png"></a>
+                </li>
+                <li><a href="https://tigers.co.kr/tigers/bi/emblem">
+                        <img src="imgs/bs2.png"></a>
+                </li>
+                <li><a href="https://www.samsunglions.com/index.asp">
+                        <img src="imgs/bs3.png"></a>
+                </li>
+                <li><a href="https://www.giantsclub.com/html/">
+                        <img src="imgs/bs4.png"></a>
+                </li>
+                <li><a href="https://www.ncdinos.com/">
+                        <img src="imgs/bs5.png"></a>
+                </li>
+                <li><a href="https://www.doosanbears.com/">
+                        <img src="imgs/bs6.png"></a>
+                </li>
+                <li><a href="https://www.ssglanders.com/main">
+                        <img src="imgs/bs7.png"></a>
+                </li>
+                <li><a href="https://www.lgtwins.com/service/html.ncd?view=/pc_twins/twins_main/twins_main">
+                        <img src="imgs/bs8.png"></a>
+                </li>
+                <li><a href="https://www.heroesbaseball.co.kr/index.do">
+                        <img src="imgs/bs9.png"></a>
+                </li>
+                <li><a href="https://www.ktwiz.co.kr/">
+                        <img src="imgs/bs10.png"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="banner">
+        <img src="imgs/song01.webp">
+    </div>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

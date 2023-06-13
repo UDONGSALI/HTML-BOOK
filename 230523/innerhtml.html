@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div{
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 200px;
+            height: 200px;
+            background: #718c00;
+            border-bottom: 1px solid red;
+        }
+        .ml{
+            background: #fff;
+        }
+    </style>
+    <script>
+    function createEle(){
+        var content=document.getElementById('content');
+        content.innerHTML = '<p class="ml">자바스크립트</p>';
+    }
+        addEventListener('load', createEle);
+    
+    </script>
+</head>
+<body>
+   <div id="content"></div>
+    
+</body>
+</html>

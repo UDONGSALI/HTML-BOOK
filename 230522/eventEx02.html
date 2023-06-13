@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Event22</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #wrap {
+            width: 600px;
+            height: 500px;
+            border: 1px solid #999;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        #box {
+            width: 550px;
+            height: 390px;
+            position: relative;
+            border: 1px solid red;
+            margin: 25px;
+        }
+
+        #txt {
+            text-align: center;
+        }
+
+        #cir {
+            width: 30px;
+            height: 30px;
+            background: red;
+            border-radius: 20px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+    </style>
+    <script>
+        var box;
+        var xPos;
+        var yPos;
+        window.onload = function() {
+            box = document.getElementById("box");
+            xPos = document.getElementById('x');
+            yPos = document.getElementById('y');
+            clr = document.getElementById("cir");
+            
+            box.onmousemove = function(e) {
+                var x = e.clientX;
+                var y = e.clientY;
+                xPos.value = x;
+                yPos.value = y;
+                cir.style.left = x-220 +"px";
+                cir.style.top = y-40 +"px";
+                
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="box">
+            <div id="cir"></div>
+
+        </div>
+        <div id="txt">
+            X <input type="text" size="20" id="x">
+            Y <input type="text" size="20" id="y">
+        </div>
+    </div>
+</body>
+
+</html>

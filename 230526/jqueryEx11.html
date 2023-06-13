@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script>
+        var curr = 0;
+        var total = 30;
+        $(function(){
+            $('.curr').text(curr);
+            $('.total').text(total);
+            $('#note textarea').keyup(function(){
+               var txtConut = $(this).val().length;
+                console.log(txtConut)
+                var txt = $(this).val();
+                if(txtConut > total){
+                    alert("글자 수는 30자를 넘을 수 없습니다.")
+                    $(this).text(txt.substr(0, 30));
+                    curr = 30;
+                }else{
+                    curr = txtConut;
+                $('.curr').text(curr);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+   <div id="wrap">
+       <div id="top">
+           <span class="curr"></span>
+           <span>/</span>
+           <span class="total"></span>
+       </div>
+       <div id="note">
+           <textarea cols="20" rows ="5"></textarea>
+       </div>
+   </div>
+   
+    
+</body>
+</html>

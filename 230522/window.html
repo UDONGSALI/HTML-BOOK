@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>window</title>
+    <script>
+        window.onload = function(){
+            var cnt =0;
+            var timer =document.getElementById("timer");
+            var txt = document.getElementById("txt");
+            var interval = setInterval(function(){
+                timer.innerHTML= cnt;
+                if(cnt%2 == 0){
+                    txt.style.color = "red";
+                }else{
+                    txt.style.color = "blue";
+                }
+                cnt++;
+                if(cnt == 10){
+                    clearInterval(interval);
+                }
+            },1000)
+        }
+    
+    </script>
+</head>
+<body>
+   <div id="viewer">
+       <h1 id="timer">0</h1>
+       <h1 id="txt">안녕하세요</h1>
+   </div>
+    
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gugi&family=Nanum+Brush+Script&family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h3[class] {
+            color: red;
+        }
+
+        p[class="icox"] {
+            color: blue;
+        }
+
+        p[class^="icox"] {
+            color: red;
+        }
+
+        p[class$="icox"] {
+            color: orange;
+        }
+
+        p[class*="ee"] {
+            color: green;
+        }
+
+        a:link {
+            color: cyan;
+        }
+
+        a:visited {
+            color: red;
+        }
+
+        a:active {
+            color: green;
+        }
+
+        a:hover {
+            color: blue;
+            font-size: 2em;
+        }
+
+        #box p:first-child {
+            color: red;
+        }
+
+        #box p:nth-child(2) {
+            color: blue;
+        }
+
+        #box p:nth-child(3) {
+            color: darkblue;
+        }
+
+        #box p:nth-child(2n) {
+            color: orange;
+        }
+
+        #box:before {
+            content: "box 영역입니다.";
+            color: green;
+            font-size: 20px;
+        }
+
+        h2.tit {
+            color: blue;
+        }
+
+        .tit {
+            color: red;
+        }
+
+        .article {
+            width: 300px;
+            border: 1px solid blue !important;
+        }
+
+        #box {
+            width: 300px;
+            border: 1px solid red;
+            font-family: 'Gugi', cursive;
+        }
+
+        .title {
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 35px;
+        }
+
+        .icoxpage {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        a{
+            font-family: 'Gugi', cursive;
+            font-size: 40px;
+        }
+        
+
+    </style>
+</head>
+
+<body>
+    <h3 class="title">서울특별시</h3>
+    <h3>경기도</h3>
+    <p class="icox">주소를 작성합니다.</p>
+    <p class="icoxpage">전화번호부를 작성합니다.</p>
+    <p class="screenicox">건강기록부</p>
+    <p class="I cox U">금전출납부</p>
+    <a href="#">가상클래스</a>
+    <div id="box" class="article">
+        <p>HTML5</p>
+        <p>CSS3</p>
+        <p>Javacript</p>
+        <p>jQuery</p>
+        <p>Website</p>
+    </div>
+
+    <h2 class="tit">종속 선택자</h2>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

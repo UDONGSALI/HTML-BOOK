@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        window.onload = function(){
+            document.getElementById("btn").onclick = function(){
+                var id = document.getElementById("id").value;
+//                if(id.length < 8 || id.length > 13){
+//                    alert('아이디는 8자 이상 13자 미만입니다.');
+//                    return false;
+//                }
+                var reg = /^([a-z])(?=.*[0-9])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,12}$/;
+                if(reg.test(id)){
+                document.getElementById('frm').submit();
+
+                }
+                return false;
+            }
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <form action="abc.jsp" method="get" id="frm">
+        <table>
+            <tr>
+                <td>아이디</td>
+                <td><input type="text" id="id" name="id"></td>
+                <td><input type="button" id='btn' value = '전송'></td>
+            </tr>
+
+        </table>
+    </form>
+
+</body>
+
+</html>

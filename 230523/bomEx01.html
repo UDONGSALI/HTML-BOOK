@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #wrap {
+            width: 602px;
+            height: 300px;
+            border: 1px solid #999;
+            margin: 0 auto;
+            background: #666;
+            box-sizing: border-box;
+        }
+
+        #small {
+            width: 100px;
+            height: 300px;
+            box-sizing: border-box;
+            float: left;
+        }
+
+        #small img {
+            width: 98px;
+            height: 98px;
+            border: 1px solid #fff;
+            box-sizing: border-box;
+            opacity: 0.5;
+            cursor: pointer;
+        }
+
+        #small img:hover {
+            opacity: 1;
+        }
+
+        #large {
+            width: 500px;
+            height: 300px;
+            border: 1px solid #fff;
+            float: left;
+            box-sizing: border-box;
+
+        }
+
+        #large img {
+            width: 498px;
+            height: 298px;
+            box-sizing: border-box;
+        }
+
+    </style>
+    <script>
+        window.onload = function() {
+            var small = document.getElementById("small");
+            var im = small.getElementsByTagName("img");
+            var large = document.getElementById("large")
+            for (var i of im) {
+                i.onclick = view;
+            }
+
+            function view() {
+                for (var i of im) {
+                    i.style.border = "1px solid white";
+                    i.opacity = 0.5;
+                }
+                this.style.border = "2px solid orange";
+                this.style.opacity = 1;
+                large.setAttribute('src', this.getAttribute('src'));
+            }
+            var cnt = 1;
+            var interval = setInterval(function() {
+                var path = im[cnt].getAttribute('src');
+                large.setAttribute('src', path);
+                for (var i of im) {
+                    i.style.border = "1px solid white";
+                    i.opacity = 0.5;
+                }
+                im[cnt].style.border = "2px solid orange";
+                im[cnt].style.opacity = 1;
+                cnt++;
+                if(cnt >= 3){
+                    cnt = 0;
+                }
+            }, 2000)
+        }
+
+    </script>
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="small">
+            <img class="im1" src="imgs/f1.jpg">
+            <img class="im2" src="imgs/f2.jpg">
+            <img class="im3" src="imgs/f3.png">
+        </div>
+        <div>
+            <img id="large" src="imgs/f1.jpg">
+        </div>
+
+    </div>
+
+</body>
+
+</html>

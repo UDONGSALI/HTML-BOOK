@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #flexbox {
+            width: 80%;
+            margin: 0 auto;
+            height: 200px;
+            background: #ccc;
+            display: flex;
+        }
+
+        #flexbox div {
+            flex: 1;
+            margin: 5px;
+            border: 1px solid red;
+            background: green;
+        }
+
+        #container {
+            width: 80%;
+            height: 300px;
+            margin: 0 auto;
+        }
+
+        #container .cont {
+            display: flex;
+            border: 1px solid blue;
+        }
+
+        .cont div {
+            flex: 1 1;
+            height: 300px;
+            background: orange;
+            margin: 5px;
+        }
+
+        .cont div img {
+            width: 150px;
+            height: 150px;
+        }
+
+        #sec {
+            width: 80%;
+            margin: 0 auto;
+            display: flex;
+        }
+
+        #sec div {
+            flex: 1;
+            height: 300px;
+            background: magenta;
+            display: flex;
+        }
+        #sec #left{
+            flex-direction: column;
+        }
+        #sec #left div {
+            flex: none;
+            flex-direction: row;
+            margin: 5px;
+        }
+        #sec #right{
+            height: 200px;
+            display: flex;
+            background: cyan;
+            margin: 5px;
+        }
+
+        #sec #right div {
+            flex: 1;
+            color: blue;
+            margin: 5px;
+            height: 200px;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="flexbox">
+        <div><img src="img/flex.png"> </div>
+        <div><img src="img/flex.png"> </div>
+        <div><img src="img/flex.png"> </div>
+        <div><img src="img/flex.png"> </div>
+        <div><img src="img/flex.png"> </div>
+        <div><img src="img/flex.png"> </div>
+        <div><img src="img/flex.png"> </div>
+
+    </div>
+    <div id="container">
+        <div class="cont">
+            <div><img src="img/ani_spade.png"> </div>
+            <div><img src="img/bg_origin.png"> </div>
+            <div><img src="img/bg_fixed.png"> </div>
+        </div>
+
+    </div>
+
+    <div id="sec">
+        <div id="left">
+            <div>
+                <h1>일</h1>
+            </div>
+            <div>
+                <h1>이</h1>
+            </div>
+        </div>
+        <div id="right">
+            <div>
+                <h1>삼</h1>
+            </div>
+            <div>
+                <h1>사</h1>
+            </div>
+            <div>
+                <h1>오</h1>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+</body></html>

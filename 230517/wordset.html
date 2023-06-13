@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+
+
+
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        function createWord(key, value) {
+            this.key = key; // 입력한 키를 아래에 넣기 위함
+            this.value = value; // 입력한 키를 아래에 넣기 위함
+
+        }
+
+        function suffle(key) { // 서플에 아래 함수 계산한 값을 넣음
+            var wordChar = key.split(""); //key를 쪼개서 char 배열로 만듬
+            for (var i = 0; i < 10; i++) { //10번
+                var temp = wordChar[0]; //temp에 현재 배열의 첫 글자가 들어감
+                var r = Math.floor(Math.random() * key.length); //키의 길이에 랜덤 값 0.0000~ 0.999 까지의 값을 곱한 후 실수로 바꿈
+                wordChar[0] = wordChar[r]; // 배열의 첫 글자가 r값 자리에 있는 글자로 바뀜
+                wordChar[r] = temp; // r 자리의 글자가 첫 글자로 바뀜(중복 방지)
+
+            }
+            return wordChar.join(""); // 위의 행동을 10번 하고 나온 배열을 반환
+        }
+
+        var words = new Array();
+        words.push(new createWord("computer", "컴퓨터"));
+        words.push(new createWord("equipment", "장비"));
+        words.push(new createWord("agriculture", "농업"));
+        words.push(new createWord("letttuce", "양상추"));
+        words.push(new createWord("travel", "여행"));
+        words.push(new createWord("airplane", "비행기"));
+        words.push(new createWord("elephant", "코끼리"));
+        words.push(new createWord("diosaur", "공룡"));
+        words.push(new createWord("economy", "경제"));
+        words.push(new createWord("politics", "정치"));
+
+        function selelctWord() {
+            var r = Math.floor(Math.random() * words.length);
+            var word = words[r].key;
+            return word;
+        }
+
+        var word;
+        window.onload = function() {
+            word = selelctWord();
+            console.log(word);
+            var key = suffle(word);
+            var wordc = document.getElementById("word");
+            wordc.value = key;
+        }
+
+        function wordchk() {
+            var answer = document.getElementById("answer").value;
+            var result = document.getElementById("result");
+            if (answer == word) {
+                result.value = "정답"
+            } else {
+                result.value = "오답"
+
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+    <h2>아래 단어의 철자를 바르게 입력 하시오.</h2>
+    <span>섞은 단어</span><input type="text" id="word" size="30"><br>
+    <span>입력&nbsp;&nbsp;&nbsp; 답</span><input type="text" id="answer" size="30"><br>
+    <button onclick="wordchk();">확인</button><br>
+    <input type="text" id="result">
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

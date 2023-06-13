@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #header {
+            width: 80%;
+            height: 100px;
+            background: #999;
+            margin: 0 auto;
+        }
+        
+        #container{
+            width: 80%;
+            margin: 0 auto;
+            background: #666;
+            padding: 20px;
+            box-sizing: border-box;
+            position: relative;
+        }
+        .arc{
+            width: 25%;
+            height: 300px;
+            box-sizing: border-box;
+            float: left;
+        }
+        #sideMenu{
+            background: red;
+             float: left;
+        }
+        #content{
+            background: blue;
+            position: absolute;
+            left: 37.5%;
+            float: left;
+        }
+         #banner{
+            background: green;
+              float: right;
+        }
+        #footer{
+            clear: both;
+            width: 80%;
+            height: 100px;
+            background: #333;
+            margin: 0 auto;
+            clear: both;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div id="header">
+        header
+    </div>
+    <div id="container">
+        <div id="sideMenu" class="arc">
+            sidMenu
+        </div>
+        <div id="content" class="arc">
+            content
+        </div>
+        <div id="banner" class="arc">
+            banner
+        </div>
+
+    </div>
+    <div id="footer">
+        footer
+    </div>
+</body></html>

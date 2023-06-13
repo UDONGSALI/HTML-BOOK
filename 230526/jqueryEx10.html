@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script>
+        $(function(){
+           $('#txt').keyup(function(){
+               var value = $(this).val();
+               var reg =/[a-z]/;
+               
+               if(!reg.test(value.substr(-1))){
+                   $(this).val(valur.substr(0, value.length-1));
+               }
+           });
+            
+            $('#txt').keydown(function(){
+               var value = $(this).val();
+               var reg =/[a-z]/;
+               
+               if(!reg.test(value.substr(-1))){
+                   $(this).val(valur.substr(0, value.length-1));
+               }
+           });
+        });
+    </script>
+</head>
+<body>
+   <input type="text" id="txt">
+    
+</body>
+</html>

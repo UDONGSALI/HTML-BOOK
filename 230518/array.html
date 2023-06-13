@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Array</title>
+    <script>
+        var city = ['서울', '대전', '대구', '부산', '광주', '제주', '인천'];
+        //        for (var c in city) {
+        //            console.log(c + city[c]);
+        //        }
+        //        for (var c of city) {
+        //            console.log(c);
+        //        }
+
+        //        city.forEach(function(value, index, attay) {
+        //                     console.log(value);
+        //                     console.log(index);
+        //                     console.log(attay);
+        //        
+        //        });
+
+        console.log(city.sort());
+        console.log(city.sort().reverse());
+        
+        var num = [23,15,33,20,7,27,5]
+        console.log(num.sort(function(a, b){
+            return a - b;
+        }));
+        console.log(num.sort(function(a, b){
+            return b - a;
+        }));
+
+    </script>
+
+</head>
+
+<body>
+
+
+
+</body>
+
+</html>

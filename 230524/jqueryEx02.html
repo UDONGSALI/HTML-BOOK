@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .act{
+            color: red;
+            font-size: 50px;
+        }
+    
+    </style>
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script>
+        var city = ['서울','대전','대구','부산'];
+        $(function(){
+            $.map(city, function(value, index){
+               console.log('index : ' + index + ' ' +  'value : ' + value);
+            });
+            $('.sub > li').map(function(index, value){
+                if(index == "0"){
+                $(this).css({color: "blue"});
+                }
+                
+            var num = ['1', '2', '3', '4'];
+                
+            newNum = $.map(num, function(index, value){
+               return Number(value);
+            });
+            console.log(newNum); 
+            });
+            
+        var txt = $('#txt > p').text();
+            
+            $('#txt > p').mouseenter(function(){
+                $('#txt > p').text('Hello world');
+            });
+            
+            
+            $('#txt > p').mouseleave(function(){
+                $('#txt > p').text('안녕하세요');
+            });
+            
+            $('#txt > p').click(function(){
+                $(this).toggleClass('act');
+            })
+            
+            $('.sub > li').text(function(index, text){
+                var t = ['대전', '대구', '부산', '서울'];
+                
+                return t[index];
+            });
+            
+            console.log($('#txt p').html());
+//            $('#txt > p').html("<h1>안녕!!</h1>");
+            
+            
+            
+            
+        
+        });
+    </script>
+</head>
+<body>
+   <ul class="sub">
+       <li>리스트 1</li>
+       <li>리스트 2</li>
+       <li>리스트 3</li>
+       <li>리스트 4</li>
+   </ul>
+   
+   <div id="txt">
+       <p>안녕하세요!</p>
+   </div>
+    
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
